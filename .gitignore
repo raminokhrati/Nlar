@@ -1,0 +1,32 @@
+__pycache__/
+.venv/
+config.py
+results/
+references/
+External Libraries/
+Scratches and Consoles/
+
+# Ignore PyCharm project files
+.idea/
+
+# Ignore local history
+.idea/**/shelf/
+.idea/**/workspace.xml
+local_history.patch
+
+*.pyc
+initial_parameters/
+
+/experiments/rl-ddqn/acrobot.py
+/experiments/rl-ddqn/cc_logistic.py
+/experiments/rl-ddqn/mountain_car.py
+/experiments/rl-ddqn/pendulum.py
+/experiments/rl-ddqn/taxi.py
+
+/imgs/
+
+/src/back-up.py
+
+
+/experiments/regressions/
+/experiments/classifications/cifar10_vgg16.py
