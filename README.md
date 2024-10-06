@@ -1,13 +1,14 @@
 # Nlar
 
-This project implements [brief description of your project] using Python. Below are the instructions for setting up the project, including how to configure the necessary shared path and run the project.
+This project implements Nlar algorithm using Python. Below are the instructions for setting up the project, 
+including how to configure the necessary shared path and run the project.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Configuration Setup](#configuration-setup)
-- [Running the Project](#running-the-project)
-- [Contributing](#contributing)
+  - [Run Demo or Other Applications](#run-demo-or-other-applications)
+  - [Run the Experiments](#run-the-experiments)
 - [License](#license)
 
 ---
@@ -57,9 +58,8 @@ pip install -r requirements.txt
 
 ### Run Demo or Other Applications
 
-If you only want to run the demo applications, no configuration is required. You can also simply
-download the optimizers module where Nlarcm and Nlarsm are implemented. You can then simply
-import these optimziers from the module.
+If you only want to run the demo applications, no configuration is required. You can simply
+download the optimizers module where Nlarcm and Nlarsm are implemented and import these optimziers from the module.
 
 ### Run the Experiments
 
@@ -106,3 +106,10 @@ you need to create a configuration file based on the template provided.
 
         Note: If the path contains spaces, you can wrap it in quotes like so:
         SHARED_PATH='/your/local/path with spaces/resource'.
+
+Once the right path is configured, the experiments can be run either individually from their python file or 
+by running the "run_experiments.py".
+
+## License
+
+This project is licensed under the MIT License.
