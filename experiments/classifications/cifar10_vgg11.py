@@ -1,14 +1,15 @@
 
 import os
 
-from src.config import shared_path
+from experiments.config.config import shared_path
 os.chdir(shared_path)
 
 import tensorflow as tf#
 
-from src.optimizers import Nlarc, Nlars, AdamHD
-from src.training import run_experiment_cls_rgr
-from src.utils.utils_plot import  plot_experiment_cls_rgr
+from src.adamhd_optimizer import AdamHD
+from src.nlar_optimizers import Nlarc, Nlars
+from experiments.src_epxeriments.training import run_experiment_cls_rgr
+from experiments.src_epxeriments.utils.utils_plot import  plot_experiment_cls_rgr
 
 from tensorflow.keras.optimizers import Adam
 
@@ -39,7 +40,7 @@ use_saved_initial_weights = True # to use saved initial weights of the training 
 reg_train_loss = False # to save training losses
 reg_train_loss_batch = False # to save batch losses on training
 reg_learning_rate = False # to save the history of learning rates
-overwrite = True # to recall saved results
+overwrite = False # to recall saved results_experiments
 
 # number of seeds
 n_seeds = 3

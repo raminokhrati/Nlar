@@ -2,7 +2,7 @@ import random
 from collections import deque
 
 import tensorflow  as tf
-from src.models import model_generate
+from experiments.src_epxeriments.models import model_generate
 
 tf.keras.backend.set_floatx('float64')
 

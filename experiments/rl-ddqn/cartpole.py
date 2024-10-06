@@ -1,7 +1,7 @@
 
 
 import os
-from src.config import shared_path
+from experiments.config.config import shared_path
 os.chdir(shared_path)
 
 import tensorflow as tf
@@ -12,13 +12,13 @@ import gym
 
 import random
 
-from src.utils.utils_general import save_obj, load_obj, parallel_computing_strategy
-from src.utils.utils_experiments_setup import model_generate
-from src.utils.utils_plot import plot_experiment_rl
-from src.training import run_experiment_lr
+from experiments.src_epxeriments.utils.utils_general import save_obj, load_obj
+from experiments.src_epxeriments.utils.utils_experiments_setup import model_generate
+from experiments.src_epxeriments.utils.utils_plot import plot_experiment_rl
+from experiments.src_epxeriments.training import run_experiment_lr
 
 
-from src.optimizers import Nlarc, Nlars, AdamHD
+from src.adamhd_optimizer import Nlarc, Nlars, AdamHD
 from tensorflow.keras.optimizers import Adam
 
 ##

@@ -1,6 +1,6 @@
 
 import os
-from config.config import shared_path
+from experiments.config.config import shared_path
 os.chdir(shared_path)
 
 import numpy as np
@@ -85,7 +85,7 @@ def load_obj(file_name):
 
 def f_name_gen(dic, withkey=True):
     """Given dictionary dic; it generates a file name. This function creates concise file name
-    to save the results."""
+    to save the results_experiments."""
     if withkey:
         try:
             return "_".join([f"{key}={value:.2}" for key, value in dic.items()])
@@ -102,7 +102,7 @@ def f_name_gen(dic, withkey=True):
 
 def save_results(optimizer=None, accus_score=None, experiment_name=None, seeds=None, optimizer_args=None,
                  hists=None, exe_times=None, callbacks=None, training_params=None):
-    """This function saves the results."""
+    """This function saves the results_experiments."""
     assert seeds is not None and training_params is not None
 
     path_temp = (experiment_name + '/' + optimizer.__name__ +
@@ -118,28 +118,28 @@ def save_results(optimizer=None, accus_score=None, experiment_name=None, seeds=N
         callbacks_names = [_.__name__ for _ in callbacks]
 
         if 'ModelCheckpoint' not in callbacks_names:
-            save_obj(accus_score, 'results/' + 'accuss/' +
+            save_obj(accus_score, 'experiments/results_experiments/' + 'accuss/' +
                      path_temp + '_accus_call_minlr_' + str(min_lr) + 'no_model_check' + tf.keras.backend.floatx())
-            save_obj(hists, 'results/' + 'histories/' +
+            save_obj(hists, 'experiments/results_experiments/' + 'histories/' +
                      path_temp + '_hist_call_minlr_' + str(min_lr) + 'no_model_check' + tf.keras.backend.floatx())
-            save_obj(exe_times, 'results/' + 'exe_times/' +
+            save_obj(exe_times, 'experiments/results_experiments/' + 'exe_times/' +
                      path_temp + '_exe_time_call_minlr_' + str(min_lr) + 'no_model_check' + tf.keras.backend.floatx())
         else:
-            save_obj(accus_score, 'results/' + 'accuss/' +
+            save_obj(accus_score, 'experiments/results_experiments/' + 'accuss/' +
                      path_temp + '_accus_call_minlr_' + str(min_lr) + tf.keras.backend.floatx())
-            save_obj(hists, 'results/' + 'histories/' +
+            save_obj(hists, 'experiments/results_experiments/' + 'histories/' +
                      path_temp + '_hist_call_minlr_' + str(min_lr) + tf.keras.backend.floatx())
-            save_obj(exe_times, 'results/' + 'exe_times/' +
+            save_obj(exe_times, 'experiments/results_experiments/' + 'exe_times/' +
                      path_temp + '_exe_time_call_minlr_' + str(min_lr) + tf.keras.backend.floatx())
     else:
-        save_obj(accus_score, 'results/' + 'accuss/' + path_temp + tf.keras.backend.floatx())
-        save_obj(hists, 'results/' + 'histories/' + path_temp + tf.keras.backend.floatx())
-        save_obj(exe_times, 'results/' + 'exe_times/' + path_temp + tf.keras.backend.floatx())
+        save_obj(accus_score, 'experiments/results_experiments/' + 'accuss/' + path_temp + tf.keras.backend.floatx())
+        save_obj(hists, 'experiments/results_experiments/' + 'histories/' + path_temp + tf.keras.backend.floatx())
+        save_obj(exe_times, 'experiments/results_experiments/' + 'exe_times/' + path_temp + tf.keras.backend.floatx())
 
 
 def load_results(optimizer=None, experiment_name=None, seeds=None, training_params=None,
                  optimizer_args=None, callbacks=None):
-    """This function load the results."""
+    """This function load the results_experiments."""
 
     assert seeds is not None
 
@@ -157,27 +157,27 @@ def load_results(optimizer=None, experiment_name=None, seeds=None, training_para
         callbacks_names = [_.__name__ for _ in callbacks]
 
         if 'ModelCheckpoint' not in callbacks_names:
-            accus = load_obj('results/' + 'accuss/' +
+            accus = load_obj('experiments/results_experiments/' + 'accuss/' +
                              path_temp + '_accus_call_minlr_' + str(min_lr) + 'no_model_check' +
                              tf.keras.backend.floatx())
-            hists = load_obj('results/' + 'histories/' +
+            hists = load_obj('experiments/results_experiments/' + 'histories/' +
                              path_temp + '_hist_call_minlr_' + str(min_lr) + 'no_model_check' +
                              tf.keras.backend.floatx())
-            exe_times = load_obj('results/' + 'exe_times/' +
+            exe_times = load_obj('experiments/results_experiments/' + 'exe_times/' +
                                  path_temp + '_exe_time_call_minlr_' + str(min_lr) + 'no_model_check' +
                                  tf.keras.backend.floatx())
         else:
-            accus = load_obj('results/' + 'accuss/' +
+            accus = load_obj('experiments/results_experiments/' + 'accuss/' +
                              path_temp + '_accus_call_minlr_' + str(min_lr) + tf.keras.backend.floatx())
-            hists = load_obj('results/' + 'histories/' +
+            hists = load_obj('experiments/results_experiments/' + 'histories/' +
                              path_temp + '_hist_call_minlr_' + str(min_lr) + tf.keras.backend.floatx())
-            exe_times = load_obj('results/' + 'exe_times/' +
+            exe_times = load_obj('experiments/results_experiments/' + 'exe_times/' +
                                  path_temp + '_exe_time_call_minlr_' + str(min_lr) + tf.keras.backend.floatx())
     else:
 
-        accus = load_obj('results/' + 'accuss/' + path_temp + tf.keras.backend.floatx())
-        hists = load_obj('results/' + 'histories/' + path_temp + tf.keras.backend.floatx())
-        exe_times = load_obj('results/' + 'exe_times/' + path_temp + tf.keras.backend.floatx())
+        accus = load_obj('experiments/results_experiments/' + 'accuss/' + path_temp + tf.keras.backend.floatx())
+        hists = load_obj('experiments/results_experiments/' + 'histories/' + path_temp + tf.keras.backend.floatx())
+        exe_times = load_obj('experiments/results_experiments/' + 'exe_times/' + path_temp + tf.keras.backend.floatx())
 
     return accus, hists, exe_times
 

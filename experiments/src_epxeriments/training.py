@@ -2,23 +2,24 @@
 
 
 import os
-from config.config import  shared_path
+from experiments.config.config import  shared_path
 os.chdir(shared_path)
 import tensorflow as tf
 import time
 import copy
 from tqdm import tqdm
-from src.ddqn_agent import  DQNAgent
+from experiments.src_epxeriments.ddqn_agent import  DQNAgent
 import random
 
-from src.utils.utils_general import (load_obj, save_results, load_results, custome_mean_loss, compute_avg_return_rl,
-                                     int_dtype)
-from src.utils.utils_callbacks import BatchLossCallback, BatchLerCallback, EpochLossCallback
-from src.data.load_data import shuffle_data_with_seed
-from src.models import model_generate
-from src.utils.utils_experiments_setup import  setup_experiment
+from experiments.src_epxeriments.utils.utils_general import (load_obj, save_results, load_results, custome_mean_loss, compute_avg_return_rl,
+                                                             int_dtype)
+from experiments.src_epxeriments.utils.utils_callbacks import BatchLossCallback, BatchLerCallback, EpochLossCallback
+from experiments.src_epxeriments.data.load_data import shuffle_data_with_seed
+from experiments.src_epxeriments.models import model_generate
+from experiments.src_epxeriments.utils.utils_experiments_setup import  setup_experiment
 import numpy as np
-from src.optimizers import AdamHD, Nlars, Nlarc
+from src.adamhd_optimizer import AdamHD
+from src.nlar_optimizers import Nlarc, Nlars
 from keras.optimizers import Adam
 from keras.callbacks import ReduceLROnPlateau, ModelCheckpoint
 
@@ -69,13 +70,13 @@ def train_cls_rgr_perseed(
         with strategy.scope():
             model = model_generate(**model_conf)
             model.compile(optimizer=optimizer(**optimizer_args_temp), loss=loss, metrics=metrics)
-            model.set_weights(load_obj('initial_parameters/' + 'init_weights/' + experiment_name
+            model.set_weights(load_obj('experiments/initial_parameters/' + 'init_weights/' + experiment_name
                                        + '/' + "model_orig_w_" +
                                        data_source + str(seed)))
     else:
         model = model_generate(**model_conf)
         model.compile(optimizer=optimizer(**optimizer_args_temp), loss=loss, metrics=metrics)
-        model.set_weights(load_obj('initial_parameters/' + 'init_weights/' + experiment_name
+        model.set_weights(load_obj('experiments/initial_parameters/' + 'init_weights/' + experiment_name
                                    + '/' + "model_orig_w_" +
                                    data_source + str(seed)))
 
@@ -221,7 +222,7 @@ def train_cls_rgr(
     # Logging and Data Source
     experiment_name=None, data_source=None,
 
-    # Overwrite: if True, no saved results are called.
+    # Overwrite: if True, no saved results_experiments are called.
     overwrite=None,
 ):
 

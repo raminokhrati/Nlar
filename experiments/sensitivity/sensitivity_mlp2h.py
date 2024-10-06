@@ -1,16 +1,15 @@
 
 import os
 
-from src.config import shared_path
+from experiments.config.config import shared_path
 os.chdir(shared_path)
 
 import tensorflow as tf
 
-from src.optimizers import Nlarc, Nlars, AdamHD
-from src.training import run_experiment_cls_rgr
-from src.utils.utils_plot import  plot_experiment_cls_rgr
+from src.nlar_optimizers import Nlarc, Nlars
+from experiments.src_epxeriments.training import run_experiment_cls_rgr
+from experiments.src_epxeriments.utils.utils_plot import  plot_experiment_cls_rgr
 
-from tensorflow.keras.optimizers import Adam
 os.environ['TF_GPU_ALLOCATOR'] = 'cuda_malloc_async'
 
 ##
@@ -37,17 +36,17 @@ use_saved_initial_weights = True # to use saved initial weights of the training 
 reg_train_loss = False # to save training losses
 reg_train_loss_batch = False # to save batch losses on training
 reg_learning_rate = False # to save the history of learning rates
-overwrite = False # to recall saved results
+overwrite = False # to recall saved results_experiments
 
 # number of seeds
 n_seeds = 3
 
 # determine optimizers' parameters
 momentums = [1]
-lr_rates = [1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 0.5, 1]
+lr_rates = [0.1]
 betas = [1e-7, 1e-4]
 
-optimizers = [Nlars, Nlarc, Adam, AdamHD]
+optimizers = [Nlars]
 sns_analysis_vars = {'momentum':[None, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9, 0.95, 1 ]}
 
 # other examples of sensitivity parameters:

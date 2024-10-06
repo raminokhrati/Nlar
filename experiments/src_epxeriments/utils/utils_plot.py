@@ -4,9 +4,9 @@ import math
 import numpy as np
 import distinctipy
 
-from src.utils.utils_general import  load_obj, f_name_gen, load_results, get_ler_history
-from src.utils.utils_experiments_setup import setup_optimizers_args, get_seeds
-from src.utils.utils_callbacks import get_experiments_callbacks
+from experiments.src_epxeriments.utils.utils_general import  load_obj, f_name_gen, load_results, get_ler_history
+from experiments.src_epxeriments.utils.utils_experiments_setup import setup_optimizers_args, get_seeds
+from experiments.src_epxeriments.utils.utils_callbacks import get_experiments_callbacks
 
 import tensorflow as tf
 
@@ -111,13 +111,13 @@ def plot_optimizer_learning_curves(index=None, item=None, optimizer_args=None, e
         if 'ModelCheckpoint' not in callbacks_names:
 
             hists = load_obj(
-                'results/' + 'histories/' + path_temp + '_hist_call_minlr_' +
+                'experiments/results_experiments/' + 'histories/' + path_temp + '_hist_call_minlr_' +
                 str(min_lr) + 'no_model_check' + tf.keras.backend.floatx())
 
         else:
-            hists = load_obj('results/' + 'histories/' + path_temp + '_hist_call_minlr_' + str(min_lr) + tf.keras.backend.floatx())
+            hists = load_obj('experiments/results_experiments/' + 'histories/' + path_temp + '_hist_call_minlr_' + str(min_lr) + tf.keras.backend.floatx())
     else:
-        hists = load_obj('results/' + 'histories/' + path_temp + tf.keras.backend.floatx())
+        hists = load_obj('experiments/results_experiments/' + 'histories/' + path_temp + tf.keras.backend.floatx())
 
     s_nr = []
     for s in range(n_seeds):

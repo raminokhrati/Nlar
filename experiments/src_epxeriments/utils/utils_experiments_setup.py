@@ -2,22 +2,30 @@
 import tensorflow as tf
 import random
 
-from src.utils.utils_callbacks import get_experiments_callbacks
-from src.utils.utils_general import save_obj, load_obj, parallel_computing_strategy
-from src.models import model_generate
-from src.data.load_data import get_data
+from experiments.src_epxeriments.utils.utils_callbacks import get_experiments_callbacks
+from experiments.src_epxeriments.utils.utils_general import save_obj, load_obj, parallel_computing_strategy
+from experiments.src_epxeriments.models import model_generate
+from experiments.src_epxeriments.data.load_data import get_data
 ##
 
 def get_seeds(experiment_name=None, data_source=None, n_seeds=None, use_saved_initials_seed=None):
-    # seed selection
-    if not use_saved_initials_seed:
+
+    assert isinstance(use_saved_initials_seed, bool), print(f"The value of {use_saved_initials_seed} must be boolean.")
+
+    seeds = None
+    if use_saved_initials_seed:
+        try:
+            seeds = load_obj(
+                'experiments/initial_parameters/seeds/' + experiment_name + '/' + data_source + tf.keras.backend.floatx())
+        except Exception as e:
+            print(e)
+
+    else:
         seeds = []
         for _ in range(n_seeds):
             if not use_saved_initials_seed:
                 seeds.append(random.randint(0, 2 ** 32 - 1))
-        save_obj(seeds, 'initial_parameters/seeds/' + experiment_name + '/' + data_source + tf.keras.backend.floatx())
-    else:
-        seeds = load_obj('initial_parameters/seeds/' + experiment_name + '/' + data_source + tf.keras.backend.floatx())
+        save_obj(seeds, 'experiments/initial_parameters/seeds/' + experiment_name + '/' + data_source + tf.keras.backend.floatx())
     return seeds
 
 ##

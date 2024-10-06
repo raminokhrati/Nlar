@@ -1,7 +1,6 @@
 __pycache__/
 .venv/
 experiments/config/config.py
-experiments/results_experiments/
 references/
 External Libraries/
 Scratches and Consoles/
@@ -9,18 +8,153 @@ Scratches and Consoles/
 # Ignore PyCharm project files
 .idea/
 
-/path/to/your/folder/
-!/path/to/your/folder/include_this_file.txt
-!/path/to/your/folder/subfolder/
-
-
 # Ignore local history
 .idea/**/shelf/
 .idea/**/workspace.xml
 local_history.patch
 
 *.pyc
-experiments/initial_parameters/
+
+# ignore init_weights
+# Ignore everything inside init_weights/
+experiments/initial_parameters/init_weights/*
+# Do not ignore the cifar10_cnn/ directory itself
+!/experiments/initial_parameters/init_weights/cifar10_cnn/
+# Ignore everything inside cifar10_cnn/
+experiments/initial_parameters/init_weights/cifar10_cnn/*
+# Allow specific files inside cifar10_cnn/ (if needed)
+# For example, allow .gitkeep file or any other specific file
+!/experiments/initial_parameters/init_weights/cifar10_cnn/.gitkeep
+
+# Do not ignore the cifar10_cnn/ directory itself
+!/experiments/initial_parameters/init_weights/cifar10_mlp7h/
+experiments/initial_parameters/init_weights/cifar10_mlp7h/*
+!/experiments/initial_parameters/init_weights/cifar10_mlp7h/.gitkeep
+
+!/experiments/initial_parameters/init_weights/dqn_cartpole/
+experiments/initial_parameters/init_weights/dqn_cartpole/*
+!/experiments/initial_parameters/init_weights/dqn_cartpole/.gitkeep
+
+!/experiments/initial_parameters/init_weights/mnist_logistic/
+experiments/initial_parameters/init_weights/mnist_logistic/*
+!/experiments/initial_parameters/init_weights/mnist_logistic/.gitkeep
+
+!/experiments/initial_parameters/init_weights/mnist_mlp/
+experiments/initial_parameters/init_weights/mnist_mlp/*
+!/experiments/initial_parameters/init_weights/mnist_mlp/.gitkeep
+
+# ignore saved weights
+experiments/initial_parameters/save_best_weights/*
+!/experiments/initial_parameters/save_best_weights/cifar10_cnn/
+experiments/initial_parameters/save_best_weights/cifar10_cnn/*
+!/experiments/initial_parameters/save_best_weights/cifar10_cnn/.gitkeep
+
+!/experiments/initial_parameters/save_best_weights/cifar10_mlp7h/
+experiments/initial_parameters/save_best_weights/cifar10_mlp7h/*
+!/experiments/initial_parameters/save_best_weights/cifar10_mlp7h/.gitkeep
+
+!/experiments/initial_parameters/save_best_weights/dqn_cartpole/
+experiments/initial_parameters/save_best_weights/dqn_cartpole/*
+!/experiments/initial_parameters/save_best_weights/dqn_cartpole/.gitkeep
+
+!/experiments/initial_parameters/save_best_weights/mnist_logistic/
+experiments/initial_parameters/save_best_weights/mnist_logistic/*
+!/experiments/initial_parameters/save_best_weights/mnist_logistic/.gitkeep
+
+!/experiments/initial_parameters/save_best_weights/mnist_mlp/
+experiments/initial_parameters/save_best_weights/mnist_mlp/*
+!/experiments/initial_parameters/save_best_weights/mnist_mlp/.gitkeep
+
+# ignore seeds
+experiments/initial_parameters/seeds/*
+!/experiments/initial_parameters/seeds/cifar10_cnn/
+experiments/initial_parameters/seeds/cifar10_cnn/*
+!/experiments/initial_parameters/seeds/cifar10_cnn/.gitkeep
+
+!/experiments/initial_parameters/seeds/cifar10_mlp7h/
+experiments/initial_parameters/seeds/cifar10_mlp7h/*
+!/experiments/initial_parameters/seeds/cifar10_mlp7h/.gitkeep
+
+!/experiments/initial_parameters/seeds/dqn_cartpole/
+experiments/initial_parameters/seeds/dqn_cartpole/*
+!/experiments/initial_parameters/seeds/dqn_cartpole/.gitkeep
+
+!/experiments/initial_parameters/seeds/mnist_logistic/
+experiments/initial_parameters/seeds/mnist_logistic/*
+!/experiments/initial_parameters/seeds/mnist_logistic/.gitkeep
+
+!/experiments/initial_parameters/seeds/mnist_mlp/
+experiments/initial_parameters/seeds/mnist_mlp/*
+!/experiments/initial_parameters/seeds/mnist_mlp/.gitkeep
+
+
+#ignore results accuss
+
+experiments/results_experiments/accuss/*
+!/experiments/results_experiments/accuss/cifar10_cnn/
+experiments/results_experiments/accuss/cifar10_cnn/*
+!/experiments/results_experiments/accuss/cifar10_cnn/.gitkeep
+
+!/experiments/results_experiments/accuss/cifar10_mlp7h/
+experiments/results_experiments/accuss/cifar10_mlp7h/*
+!/experiments/results_experiments/accuss/cifar10_mlp7h/.gitkeep
+
+!/experiments/results_experiments/accuss/dqn_cartpole/
+experiments/results_experiments/accuss/dqn_cartpole/*
+!/experiments/results_experiments/accuss/dqn_cartpole/.gitkeep
+
+!/experiments/results_experiments/accuss/mnist_logistic/
+experiments/results_experiments/accuss/mnist_logistic/*
+!/experiments/results_experiments/accuss/mnist_logistic/.gitkeep
+
+!/experiments/results_experiments/accuss/mnist_mlp/
+experiments/results_experiments/accuss/mnist_mlp/*
+!/experiments/results_experiments/accuss/mnist_mlp/.gitkeep
+
+# ignore results exe_times
+experiments/results_experiments/exe_times/*
+!/experiments/results_experiments/exe_times/cifar10_cnn/
+experiments/results_experiments/exe_times/cifar10_cnn/*
+!/experiments/results_experiments/exe_times/cifar10_cnn/.gitkeep
+
+!/experiments/results_experiments/exe_times/cifar10_mlp7h/
+experiments/results_experiments/exe_times/cifar10_mlp7h/*
+!/experiments/results_experiments/exe_times/cifar10_mlp7h/.gitkeep
+
+!/experiments/results_experiments/exe_times/dqn_cartpole/
+experiments/results_experiments/exe_times/dqn_cartpole/*
+!/experiments/results_experiments/exe_times/dqn_cartpole/.gitkeep
+
+!/experiments/results_experiments/exe_times/mnist_logistic/
+experiments/results_experiments/exe_times/mnist_logistic/*
+!/experiments/results_experiments/exe_times/mnist_logistic/.gitkeep
+
+!/experiments/results_experiments/exe_times/mnist_mlp/
+experiments/results_experiments/exe_times/mnist_mlp/*
+!/experiments/results_experiments/exe_times/mnist_mlp/.gitkeep
+
+# ignore histories
+experiments/results_experiments/histories/*
+!/experiments/results_experiments/histories/cifar10_cnn/
+experiments/results_experiments/histories/cifar10_cnn/*
+!/experiments/results_experiments/histories/cifar10_cnn/.gitkeep
+
+!/experiments/results_experiments/histories/cifar10_mlp7h/
+experiments/results_experiments/histories/cifar10_mlp7h/*
+!/experiments/results_experiments/histories/cifar10_mlp7h/.gitkeep
+
+!/experiments/results_experiments/histories/dqn_cartpole/
+experiments/results_experiments/histories/dqn_cartpole/*
+!/experiments/results_experiments/histories/dqn_cartpole/.gitkeep
+
+!/experiments/results_experiments/histories/mnist_logistic/
+experiments/results_experiments/histories/mnist_logistic/*
+!/experiments/results_experiments/histories/mnist_logistic/.gitkeep
+
+!/experiments/results_experiments/histories/mnist_mlp/
+experiments/results_experiments/histories/mnist_mlp/*
+!/experiments/results_experiments/histories/mnist_mlp/.gitkeep
+
 
 /experiments/rl-ddqn/acrobot.py
 /experiments/rl-ddqn/cc_logistic.py
@@ -28,7 +162,7 @@ experiments/initial_parameters/
 /experiments/rl-ddqn/pendulum.py
 /experiments/rl-ddqn/taxi.py
 
-/experiments/imgs/
+/experiments/imgs/*
 !/experiments/imgs/.gitkeep
 
 /src/back-up.py
