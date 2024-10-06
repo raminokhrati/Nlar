@@ -68,7 +68,7 @@ shared resources or other environment-specific settings. After cloning the repos
 you need to create a configuration file based on the template provided.
 
 - Option 1: Using a .py Configuration File
-    - Go to the /config/ directory.
+    - Go to the experiments/config/ directory.
     - Copy config_template.py and rename the copy to config.py:
 
         Linux/macOS
@@ -80,15 +80,15 @@ you need to create a configuration file based on the template provided.
         ```bash
            copy experiments\config\config_template.py experiments\config\config.py
         ```
-    - Open the config.py file and update the SHARED_PATH variable with the appropriate path on your system:
+    - Open the config.py file and update the shared_path variable with the appropriate path on your system:
 ``` python
     # config.py
     shared_path = '/..../Nlar' # your local path to shared resource assuming that the project is saved in a folder named Nlar
 ```
 
 - Option 2: Using a .txt or .env Configuration File
-    - Go to the /config/ directory.
-    - Copy config_template.txt (or .env.template) and rename it to config.txt (or .env):
+    - Go to the experiments/config/ directory.
+    - Copy config_template.txt (or .env.template) and rename it to config.txt (or .env) by running the following command (you may need to refresh the directory to see the effect):
 
         Linux/macOS
         ```bash
@@ -99,7 +99,7 @@ you need to create a configuration file based on the template provided.
         ```bash
         copy experiments\config\config_template.txt experiments\config\config.txt
         ```
-    - Open the config.txt (or .env) file and update the SHARED_PATH with your local path:
+    - Open the config.txt (or .env) file and update the shared_path with your local path:
         ``` txt
         shared_path = '/.../Nlar' # your local path to shared resource assuming that the project is saved in a folder named Nlar
         ```
@@ -107,8 +107,10 @@ you need to create a configuration file based on the template provided.
         Note: If the path contains spaces, you can wrap it in quotes like so:
         SHARED_PATH='/your/local/path with spaces/resource'.
 
-Once the right path is configured, the experiments can be run either individually from their python file or 
-by running the "run_experiments.py".
+**Once the right path is configured, the experiments can be run by executing "run_experiments.py" file in the folder "experiments".
+Alternatively, they can be run individually from their python files: folder "classifications"
+for classification experiments and folder "reinforcement-learning-ddqn" for the reinforcement learning experiment both 
+located in folder "experiments".**
 
 ## License
 
