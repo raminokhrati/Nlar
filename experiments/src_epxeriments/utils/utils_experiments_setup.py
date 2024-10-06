@@ -19,7 +19,10 @@ def get_seeds(experiment_name=None, data_source=None, n_seeds=None, use_saved_in
                 'experiments/initial_parameters/seeds/' + experiment_name + '/' + data_source + tf.keras.backend.floatx())
         except Exception as e:
             print(e)
-
+            print(f"The value of use_saved_initials_seed is {use_saved_initials_seed}; "
+                  f"if there are no saved seeds (for instance if this is the first run), please set the value of "
+                  f"use_saved_initials_seed to be False,"
+                  f"so new seeds are selected.")
     else:
         seeds = []
         for _ in range(n_seeds):
@@ -174,7 +177,7 @@ def setup_experiment(
             model_orig_w = model.get_weights()
 
             save_obj(model_orig_w,
-                     'initial_parameters/init_weights/' + experiment_name + '/' + "model_orig_w_" + data_source + str(
+                     'experiments/initial_parameters/init_weights/' + experiment_name + '/' + "model_orig_w_" + data_source + str(
                          seed))
 
     optimizers_args = setup_optimizers_args()

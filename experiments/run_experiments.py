@@ -10,7 +10,7 @@ experiments = {
     "mnist_mlp2h": "experiments/classifications/mnist_mlp2h.py",
     "cifar10_mlp7h": "experiments/classifications/cifar10_mlp7h.py",
     "cifar1_vgg11": "experiments/classifications/cifar10_vgg11.py",
-    "cartpole": "experiments/rl-ddqn/cartpole.py",
+    "cartpole": "experiments/reinforcement-learning-ddqn/cartpole.py",
     "sensitivity_mlp2h": "experiments/sensitivity/sensitivity_mlp2h.py",
     "sensitivity_mlp7h": "experiments/sensitivity/sensitivity_mlp7h.py"
 }
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 # experiments = {
 #     "mnist_logistic": "experiments/classifications/mnist_logistic.py",
 #     "cifar10_mlp7h": "experiments/classifications/cifar10_mlp7h.py",
-#     "cartpole": "experiments/rl-ddqn/cartpole.py",
+#     "cartpole": "experiments/reinforcement-learning-ddqn/cartpole.py",
 #     "sensitivity_mlp7h": "experiments/sensitivity/sensitivity_mlp7h.py"
 # }
 #

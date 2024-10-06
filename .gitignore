@@ -156,11 +156,11 @@ experiments/results_experiments/histories/mnist_mlp/*
 !/experiments/results_experiments/histories/mnist_mlp/.gitkeep
 
 
-/experiments/rl-ddqn/acrobot.py
-/experiments/rl-ddqn/cc_logistic.py
-/experiments/rl-ddqn/mountain_car.py
-/experiments/rl-ddqn/pendulum.py
-/experiments/rl-ddqn/taxi.py
+/experiments/reinforcement-learning-ddqn/acrobot.py
+/experiments/reinforcement-learning-ddqn/cc_logistic.py
+/experiments/reinforcement-learning-ddqn/mountain_car.py
+/experiments/reinforcement-learning-ddqn/pendulum.py
+/experiments/reinforcement-learning-ddqn/taxi.py
 
 /experiments/imgs/*
 !/experiments/imgs/.gitkeep

@@ -35,12 +35,12 @@ verbose = 1
 batch_size = 300
 
 # general parameters
-use_saved_initials_seed = True # to use saved initial seeds
-use_saved_initial_weights = True # to use saved initial weights of the training variables
+use_saved_initials_seed = False # to use saved initial seeds
+use_saved_initial_weights = False # to use saved initial weights of the training variables
 reg_train_loss = False # to save training losses
 reg_train_loss_batch = False # to save batch losses on training
 reg_learning_rate = False # to save the history of learning rates
-overwrite = False # to recall saved results_experiments
+overwrite = True # to recall saved results_experiments
 
 # number of seeds
 n_seeds = 3

@@ -70,15 +70,26 @@ def train_cls_rgr_perseed(
         with strategy.scope():
             model = model_generate(**model_conf)
             model.compile(optimizer=optimizer(**optimizer_args_temp), loss=loss, metrics=metrics)
-            model.set_weights(load_obj('experiments/initial_parameters/' + 'init_weights/' + experiment_name
+            try:
+                model.set_weights(load_obj('experiments/initial_parameters/' + 'init_weights/' + experiment_name
                                        + '/' + "model_orig_w_" +
                                        data_source + str(seed)))
+            except Exception as e:
+                print(e)
+                print(f"Ensure that the path to load the weights exist. If this is the first run, you possibly need to set"
+                      f"use_saved_initial_weights to be False so that new weights are created.")
+
     else:
         model = model_generate(**model_conf)
         model.compile(optimizer=optimizer(**optimizer_args_temp), loss=loss, metrics=metrics)
-        model.set_weights(load_obj('experiments/initial_parameters/' + 'init_weights/' + experiment_name
-                                   + '/' + "model_orig_w_" +
-                                   data_source + str(seed)))
+        try:
+            model.set_weights(load_obj('experiments/initial_parameters/' + 'init_weights/' + experiment_name
+                                       + '/' + "model_orig_w_" +
+                                       data_source + str(seed)))
+        except Exception as e:
+            print(e)
+            print(f"Ensure that the path to load the weights exist. If this is the first run, you possibly need to set"
+                  f"use_saved_initial_weights to be False so that new weights are created.")
 
     if reg_train_loss:
         # Since model.evaluate()[0] calculate losses not in an inference mode; we use a custom made loss calculator
@@ -279,11 +290,14 @@ def train_cls_rgr(
                      training_params=training_params)
 
     else:
+        try:
+            accus, hists, exe_times = load_results(optimizer=optimizer, experiment_name=experiment_name, seeds=seeds,
+                                                   optimizer_args=optimizer_args, callbacks=callbacks, training_params=training_params)
 
-        accus, hists, exe_times = load_results(optimizer=optimizer, experiment_name=experiment_name, seeds=seeds,
-                                               optimizer_args=optimizer_args, callbacks=callbacks, training_params=training_params)
-
-        print(f"\n The average time, per epoch, to execute experiment {experiment_name} using optimizer {optimizer.__name__} is {np.mean(exe_times) / training_params['epochs']} seconds")
+            print(f"\n The average time, per epoch, to execute experiment {experiment_name} using optimizer {optimizer.__name__} is {np.mean(exe_times) / training_params['epochs']} seconds")
+        except Exception as e:
+            print(e)
+            print(f"The value of overwrite is {overwrite}; if there are no saved results (for instance if this is the first run), please set the value of overwrite to be True.")
 
     return accus, hists, exe_times
 

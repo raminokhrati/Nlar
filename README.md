@@ -73,17 +73,17 @@ you need to create a configuration file based on the template provided.
 
         Linux/macOS
         ``` bash
-            cp config/config_template.py config/config.py
+            cp experiments/config/config_template.py experiments/config/config.py
         ```
 
         Windows (Command Prompt or PowerShell)
         ```bash
-           copy config\config_template.py config\config.py
+           copy experiments\config\config_template.py experiments\config\config.py
         ```
     - Open the config.py file and update the SHARED_PATH variable with the appropriate path on your system:
 ``` python
     # config.py
-    SHARED_PATH = '/your/local/path/to/shared/resource'
+    shared_path = '/..../Nlar' # your local path to shared resource assuming that the project is saved in a folder named Nlar
 ```
 
 - Option 2: Using a .txt or .env Configuration File
@@ -92,16 +92,16 @@ you need to create a configuration file based on the template provided.
 
         Linux/macOS
         ```bash
-        cp config/config_template.txt config/config.txt
+        cp experiments/config/config_template.txt experiments/config/config.txt
         ```
 
         Windows (Command Prompt or PowerShell)
         ```bash
-        copy config\config_template.txt config\config.txt
+        copy experiments\config\config_template.txt experiments\config\config.txt
         ```
     - Open the config.txt (or .env) file and update the SHARED_PATH with your local path:
         ``` txt
-        SHARED_PATH=/your/local/path/to/shared/resource
+        shared_path = '/.../Nlar' # your local path to shared resource assuming that the project is saved in a folder named Nlar
         ```
 
         Note: If the path contains spaces, you can wrap it in quotes like so:

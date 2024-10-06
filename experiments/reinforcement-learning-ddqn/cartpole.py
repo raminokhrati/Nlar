@@ -67,9 +67,9 @@ model_conf = dict(network_type='mlp', mlp_conf=dqn_mlp_conf, lambda_value=lambda
                   is_regression=is_regression, seed=None)
 
 # general parameters
-use_saved_initials_seed = True
-use_saved_initial_weights = True
-overwrite = False
+use_saved_initials_seed = False
+use_saved_initial_weights = False
+overwrite = True
 
 # seed selection
 seeds = []
