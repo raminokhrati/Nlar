@@ -1,6 +1,6 @@
 
 import os
-from src.config import shared_path
+from config.config import shared_path
 os.chdir(shared_path)
 
 import numpy as np

@@ -1,7 +1,7 @@
 __pycache__/
 .venv/
-config.py
-results/
+experiments/config/config.py
+experiments/results_experiments/
 references/
 External Libraries/
 Scratches and Consoles/
@@ -9,13 +9,18 @@ Scratches and Consoles/
 # Ignore PyCharm project files
 .idea/
 
+/path/to/your/folder/
+!/path/to/your/folder/include_this_file.txt
+!/path/to/your/folder/subfolder/
+
+
 # Ignore local history
 .idea/**/shelf/
 .idea/**/workspace.xml
 local_history.patch
 
 *.pyc
-initial_parameters/
+experiments/initial_parameters/
 
 /experiments/rl-ddqn/acrobot.py
 /experiments/rl-ddqn/cc_logistic.py
@@ -23,7 +28,8 @@ initial_parameters/
 /experiments/rl-ddqn/pendulum.py
 /experiments/rl-ddqn/taxi.py
 
-/imgs/
+/experiments/imgs/
+!/experiments/imgs/.gitkeep
 
 /src/back-up.py
 
