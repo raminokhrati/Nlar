@@ -18,15 +18,15 @@ local_history.patch
 # ignore init_weights
 # Ignore everything inside init_weights/
 experiments/initial_parameters/init_weights/*
-# Do not ignore the cifar10_cnn/ directory itself
-!/experiments/initial_parameters/init_weights/cifar10_cnn/
-# Ignore everything inside cifar10_cnn/
-experiments/initial_parameters/init_weights/cifar10_cnn/*
-# Allow specific files inside cifar10_cnn/ (if needed)
+# Do not ignore the cifar10_vgg11/ directory itself
+!/experiments/initial_parameters/init_weights/cifar10_vgg11/
+# Ignore everything inside cifar10_vgg11/
+experiments/initial_parameters/init_weights/cifar10_vgg11/*
+# Allow specific files inside cifar10_vgg11/ (if needed)
 # For example, allow .gitkeep file or any other specific file
-!/experiments/initial_parameters/init_weights/cifar10_cnn/.gitkeep
+!/experiments/initial_parameters/init_weights/cifar10_vgg11/.gitkeep
 
-# Do not ignore the cifar10_cnn/ directory itself
+# Do not ignore the cifar10_vgg11/ directory itself
 !/experiments/initial_parameters/init_weights/cifar10_mlp7h/
 experiments/initial_parameters/init_weights/cifar10_mlp7h/*
 !/experiments/initial_parameters/init_weights/cifar10_mlp7h/.gitkeep
@@ -45,9 +45,9 @@ experiments/initial_parameters/init_weights/mnist_mlp/*
 
 # ignore saved weights
 experiments/initial_parameters/save_best_weights/*
-!/experiments/initial_parameters/save_best_weights/cifar10_cnn/
-experiments/initial_parameters/save_best_weights/cifar10_cnn/*
-!/experiments/initial_parameters/save_best_weights/cifar10_cnn/.gitkeep
+!/experiments/initial_parameters/save_best_weights/cifar10_vgg11/
+experiments/initial_parameters/save_best_weights/cifar10_vgg11/*
+!/experiments/initial_parameters/save_best_weights/cifar10_vgg11/.gitkeep
 
 !/experiments/initial_parameters/save_best_weights/cifar10_mlp7h/
 experiments/initial_parameters/save_best_weights/cifar10_mlp7h/*
@@ -67,9 +67,9 @@ experiments/initial_parameters/save_best_weights/mnist_mlp/*
 
 # ignore seeds
 experiments/initial_parameters/seeds/*
-!/experiments/initial_parameters/seeds/cifar10_cnn/
-experiments/initial_parameters/seeds/cifar10_cnn/*
-!/experiments/initial_parameters/seeds/cifar10_cnn/.gitkeep
+!/experiments/initial_parameters/seeds/cifar10_vgg11/
+experiments/initial_parameters/seeds/cifar10_vgg11/*
+!/experiments/initial_parameters/seeds/cifar10_vgg11/.gitkeep
 
 !/experiments/initial_parameters/seeds/cifar10_mlp7h/
 experiments/initial_parameters/seeds/cifar10_mlp7h/*
@@ -91,9 +91,9 @@ experiments/initial_parameters/seeds/mnist_mlp/*
 #ignore results accuss
 
 experiments/results_experiments/accuss/*
-!/experiments/results_experiments/accuss/cifar10_cnn/
-experiments/results_experiments/accuss/cifar10_cnn/*
-!/experiments/results_experiments/accuss/cifar10_cnn/.gitkeep
+!/experiments/results_experiments/accuss/cifar10_vgg11/
+experiments/results_experiments/accuss/cifar10_vgg11/*
+!/experiments/results_experiments/accuss/cifar10_vgg11/.gitkeep
 
 !/experiments/results_experiments/accuss/cifar10_mlp7h/
 experiments/results_experiments/accuss/cifar10_mlp7h/*
@@ -113,9 +113,9 @@ experiments/results_experiments/accuss/mnist_mlp/*
 
 # ignore results exe_times
 experiments/results_experiments/exe_times/*
-!/experiments/results_experiments/exe_times/cifar10_cnn/
-experiments/results_experiments/exe_times/cifar10_cnn/*
-!/experiments/results_experiments/exe_times/cifar10_cnn/.gitkeep
+!/experiments/results_experiments/exe_times/cifar10_vgg11/
+experiments/results_experiments/exe_times/cifar10_vgg11/*
+!/experiments/results_experiments/exe_times/cifar10_vgg11/.gitkeep
 
 !/experiments/results_experiments/exe_times/cifar10_mlp7h/
 experiments/results_experiments/exe_times/cifar10_mlp7h/*
@@ -135,9 +135,9 @@ experiments/results_experiments/exe_times/mnist_mlp/*
 
 # ignore histories
 experiments/results_experiments/histories/*
-!/experiments/results_experiments/histories/cifar10_cnn/
-experiments/results_experiments/histories/cifar10_cnn/*
-!/experiments/results_experiments/histories/cifar10_cnn/.gitkeep
+!/experiments/results_experiments/histories/cifar10_vgg11/
+experiments/results_experiments/histories/cifar10_vgg11/*
+!/experiments/results_experiments/histories/cifar10_vgg11/.gitkeep
 
 !/experiments/results_experiments/histories/cifar10_mlp7h/
 experiments/results_experiments/histories/cifar10_mlp7h/*

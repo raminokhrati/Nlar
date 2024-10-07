@@ -371,7 +371,7 @@ def plot_loss_accu(
             plt.xlabel('Iteration')
         elif curve_type == 'loss':
             plt.ylabel('Training Loss' if min_lr is None else 'Training Loss under RLR')
-            if min_lr is None or experiment_name == 'cifar10_cnn': # for cifar10_cnn, we only consider min_lr=0 so we need to show the lables
+            if min_lr is None or experiment_name == 'cifar10_vgg11': # for cifar10_vgg11, we only consider min_lr=0 so we need to show the lables
                 plt.xlabel('Epoch')
         elif curve_type == 'val_loss':
             plt.ylabel('Validation Loss' if min_lr is None else 'Validation Loss under RLR')
@@ -379,7 +379,7 @@ def plot_loss_accu(
             plt.ylabel('Validation Accuracy' if min_lr is None else 'Validation Accuracy under RLR')
         elif curve_type == 'accuracy':
             plt.ylabel('Training Accuracy' if min_lr is None else 'Training Accuracy under RLR')
-            if min_lr is None or experiment_name == 'cifar10_cnn':
+            if min_lr is None or experiment_name == 'cifar10_vgg11':
                 plt.xlabel('Epoch')
 
     else:
@@ -391,7 +391,7 @@ def plot_loss_accu(
         elif curve_type == 'accuracy' and min_lr is None:
             plt.xlabel('Epoch')
         elif curve_type == 'accuracy' and min_lr == 0:
-            if experiment_name == 'cifar10_cnn':
+            if experiment_name == 'cifar10_vgg11':
                 plt.xlabel('Epoch')
 
 

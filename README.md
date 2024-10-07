@@ -109,8 +109,8 @@ you need to create a configuration file based on the template provided.
 
 **Once the right path is configured, the experiments can be run by executing "run_experiments.py" file in the folder "experiments".
 Alternatively, they can be run individually from their python files: folder "classifications"
-for classification experiments and folder "reinforcement-learning-ddqn" for the reinforcement learning experiment both 
-located in folder "experiments".**
+for classification experiments, folder "reinforcement-learning-ddqn" for the reinforcement learning experiment, and folder "sensitivity"
+for the sensitivity experiments, all located in folder "experiments".**
 
 ## License
 
