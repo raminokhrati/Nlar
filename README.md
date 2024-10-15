@@ -1,6 +1,16 @@
 # Nlar
 
-This project implements Nlar algorithm using Python. Below are the instructions for setting up the project, 
+## Title
+
+Dynamic Estimation of Learning Rates Using a Non-Linear Autoregressive Model
+
+## Abstract
+
+We introduce a new class of adaptive non-linear autoregressive (Nlar) models incorporating the concept of momentum, which dynamically estimate both the learning rates and momentum as the number of iterations increases. In our method, the growth of the gradients is controlled using a scaling (clipping) function, leading to stable convergence. Within this framework, we propose three distinct estimators for learning rates and provide theoretical proof of their convergence. We further demonstrate how these estimators underpin the development of effective Nlar optimizers. The performance of the proposed estimators and optimizers is rigorously evaluated through extensive experiments across several datasets and a reinforcement learning environment. The results highlight two key features of the Nlar optimizers: robust convergence despite variations in underlying parameters, including large initial learning rates, and strong adaptability with rapid convergence during the initial epochs.
+
+This project implements Nlar algorithm using Python. For more details, please check out the full paper on arXiv: https://arxiv.org/abs/2410.09943
+
+Below are the instructions for setting up the project, 
 including how to configure the necessary shared path and run the project.
 
 ## Table of Contents
@@ -38,7 +48,6 @@ source venv/bin/activate
 
 Windows
 ```bash
-Copy code
 # Create a virtual environment
 python -m venv venv
 
@@ -50,7 +59,6 @@ venv\Scripts\activate
 Once the virtual environment is activated, install the dependencies:
 
 ```bash
-Copy code
 pip install -r requirements.txt
 ```
 
@@ -108,9 +116,10 @@ you need to create a configuration file based on the template provided.
         SHARED_PATH='/your/local/path with spaces/resource'.
 
 **Once the right path is configured, the experiments can be run by executing "run_experiments.py" file in the folder "experiments".
-Alternatively, they can be run individually from their python files: folder "classifications"
+Alternatively, they can be run individually from their python files in their respective folders:
+folder "classifications"
 for classification experiments, folder "reinforcement-learning-ddqn" for the reinforcement learning experiment, and folder "sensitivity"
-for the sensitivity experiments, all located in folder "experiments".**
+for sensitivity experiments, all located in folder "experiments".**
 
 ## License
 
