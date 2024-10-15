@@ -10,8 +10,7 @@ We introduce a new class of adaptive non-linear autoregressive (Nlar) models inc
 
 This project implements Nlar algorithm using Python. For more details, please check out the full paper on arXiv: https://arxiv.org/abs/2410.09943
 
-Below are the instructions for setting up the project, 
-including how to configure the necessary shared path and run the project.
+Below are the instructions for setting up the project, including how to configure the necessary shared path and run the project.
 
 ## Table of Contents
 
