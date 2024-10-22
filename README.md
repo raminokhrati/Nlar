@@ -24,7 +24,7 @@ Below are the instructions for setting up the project, including how to configur
 
 ## Installation
 
-To run this project, you need to have Python installed. The recommended version is Python 3.7+.
+To run this project, you need to have Python installed. The recommended version is Python 3.10+.
 
 ### 1. Clone the Repository
 
