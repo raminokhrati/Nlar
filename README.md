@@ -16,7 +16,7 @@ on the MNIST dataset across varied learning rates.
 
 
 
-![](images_github/sample_experiment_mlp2h.png)
+![](images_readme_github/sample_experiment_mlp2h.png)
 
 Below are the instructions for setting up the project, including how to configure the necessary shared path and run the project.
 
