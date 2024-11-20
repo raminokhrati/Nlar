@@ -14,7 +14,9 @@ As an example, the following figure (Figure 2 of the paper) compares the perform
 Adam and AdamHD for an MLP with two hidden layers (each made of 1000 nodes with relu activation functions)
 on the MNIST dataset across varied learning rates.
 
-![](sample_experiment_mlp2h.png)
+
+
+![](images_github/sample_experiment_mlp2h.png)
 
 Below are the instructions for setting up the project, including how to configure the necessary shared path and run the project.
 
