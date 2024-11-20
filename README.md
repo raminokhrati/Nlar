@@ -10,6 +10,12 @@ We introduce a new class of adaptive non-linear autoregressive (Nlar) models inc
 
 This project implements Nlar algorithm using Python. For more details, please check out the full paper on arXiv: https://arxiv.org/abs/2410.09943
 
+As an example, the following figure (Figure 2 of the paper) compares the performance of Nlarsm and Nlarcm with 
+Adam and AdamHD for an MLP with two hidden layers (each made of 1000 nodes with relu activation functions)
+on the MNIST dataset across varied learning rates.
+
+![](sample_experiment_mlp2h.png)
+
 Below are the instructions for setting up the project, including how to configure the necessary shared path and run the project.
 
 ## Table of Contents
